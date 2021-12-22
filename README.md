@@ -1,17 +1,43 @@
-## My Project
+# ESP-CRYPTOAUTHLIB
 
-TODO: Fill this README out!
+This is a port of Microchip's [cryptoauthlib](https://github.com/MicrochipTech/cryptoauthlib) to work on the [M5Stack Core2 for AWS IoT EduKit](https://aws.amazon.com/iot/edukit/#Get_started_with_AWS_IoT_EduKit) using the ESP-IDF. It contains necessary build support to use cryptoauthlib with ESP-IDF as well as `esp_cryptoauthlib_utility` for configuring and provisiong ATECC608 chip integrated with the Core2 for AWS. The cryptoauthlib folder is a submodule of Microchip's [cryptoauthlib](https://github.com/MicrochipTech/cryptoauthlib). This ported library requires the [Core2 for AWS IoT EduKit board support package](https://github.com/m5stack/Core2-for-AWS-IoT-EduKit) (BSP) to be included as well for thread-safe access to the I2C bus using Rop Gonggrijp's I2C Manager and power using the ported Mika Tuupola's AXP192 driver.
 
-Be sure to:
+## Requirements
 
-* Change the title in this README
-* Edit your repository description on GitHub
+* [ESP-IDF](https://github.com/espressif/esp-idf) version should be `release/v4.3` or newer.
+* Environment variable `IDF_PATH` should be set
 
-## Security
+## How to use esp-cryptoauthlib with ESP-IDF
+---
+There are two ways to use **esp-cryptoauthlib** and the Core2 for AWS BSP in your project
 
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
+1) Directly add **esp-cryptoauthlib** and the BSP as a component in your project with following three commands.
 
-## License
+    (First change directory (cd) to your project directory)
+```
+    mkdir components
+    cd components
+    git clone https://github.com/espressif/esp-cryptoauthlib.git --recurse-submodules
+    git clone https://github.com/m5stack/Core2-for-AWS-IoT-EduKit.git --recurse-submodules
 
-This library is licensed under the MIT-0 License. See the LICENSE file.
+```
+2) Add **esp-cryptoauthlib** as an extra component in your project.
 
+* Download **esp-cryptoauthlib** and the **Core2 for AWS BSP** with:
+```
+    git clone https://github.com/espressif/esp-cryptoauthlib.git --recurse-submodules
+    git clone https://github.com/m5stack/Core2-for-AWS-IoT-EduKit.git --recurse-submodules
+```
+
+If you have downloaded the repos without using the --recurse-submodules argument, you need to run this command in each repo:
+```
+git submodule update --init --recursive
+```
+
+* Include  `esp-cryptoauthlib` in `ESP-IDF` with setting `EXTRA_COMPONENT_DIRS` in CMakeLists.txt/Makefile of your project.For reference see [Optional Project Variables](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/build-system.html#optional-project-variables)
+
+
+
+## How to configure and provision ATECC608A on Core2 for AWS
+The python utilty `esp_cryptoauth_utility` helps to configure, generate resources as well as provision ATECC608 chip integrated with the Core2 for AWS.
+For detailed instructions on how to use the utility please refer utility [README.md](esp_cryptoauth_utility/README.md)

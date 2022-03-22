@@ -3,4 +3,4 @@ description: "esp-cryptoauthlib: The port of Microchip CryptoAuthentication Libr
 url: https://github.com/espressif/esp-cryptoauthlib
 dependencies:
   idf:
-    version: ">=4.3"
+    version: ">=4.3.1"

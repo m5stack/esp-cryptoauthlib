@@ -22,7 +22,7 @@
 #include "i2c_manager.h"
 #include "core2foraws_common.h"
 
-const char* TAG = "ATECC608_HAL";
+static const char *TAG = "ATECC608_HAL";
 
 ATCA_STATUS status;
 
@@ -30,7 +30,7 @@ ATCA_STATUS status;
  * \param[in] iface  interface on which to change bus speed
  * \param[in] speed  baud rate (typically 100000 or 400000)
  */
-ATCA_STATUS hal_i2c_change_baud(ATCAIface iface, uint32_t speed)
+ATCA_STATUS hal_i2c_change_baud( ATCAIface iface, uint32_t speed )
 {
         //ESP_LOGD(TAG, "Baudrate Changed");
         return ATCA_SUCCESS;

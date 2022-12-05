@@ -1,4 +1,6 @@
-# ESP-CRYPTOAUTHLIB
+> <b>Effective March 6, 2023, AWS will end support for AWS IoT EduKit, a program that guided builders on how to develop simple IoT applications with AWS Partner reference hardware and tutorials. AWS IoT EduKit’s reference hardware kit is made and sold by our manufacturing partner, M5Stack Technology Co., Ltd. (https://m5stack.com/), who will continue to offer and support the kit and related software for interested customers.</b>
+> 
+> # ESP-CRYPTOAUTHLIB
 
 This is a port of Microchip's [cryptoauthlib](https://github.com/MicrochipTech/cryptoauthlib) to work on the [M5Stack Core2 for AWS IoT EduKit](https://aws.amazon.com/iot/edukit/#Get_started_with_AWS_IoT_EduKit). It contains necessary build support to use cryptoauthlib with ESP-IDF as well as `esp_cryptoauthlib_utility` for configuring and provisiong ATECC608 chip integrated with the Core2 for AWS. The cryptoauthlib folder is a submodule of Microchip's [cryptoauthlib](https://github.com/MicrochipTech/cryptoauthlib). This ported library requires the [Core2 for AWS IoT EduKit board support package](https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/tree/BSP-dev) (BSP) to be included for thread-safe access to the I2C bus using Rop Gonggrijp's I2C Manager, and power to the chip using the ported Mika Tuupola's AXP192 driver.
 

@@ -29,6 +29,7 @@
 #include "atca_cfgs.h"
 #include "atca_iface.h"
 #include "atca_device.h"
+#include "sdkconfig.h"
 
 /** \defgroup config Configuration (cfg_)
  * \brief Logical device configurations describe the CryptoAuth device type and logical interface.
@@ -41,13 +42,13 @@ ATCAIfaceCfg cfg_ateccx08a_i2c_default = {
     .iface_type             = ATCA_I2C_IFACE,
     .devtype                = ATECC608A,
 #ifdef ATCA_ENABLE_DEPRECATED
-    .atcai2c.slave_address  = 0x6A,
+    .atcai2c.slave_address  = CONFIG_ATCA_I2C_ADDRESS,
 #else
-    .atcai2c.address        = 0x6A,
+    .atcai2c.address        = CONFIG_ATCA_I2C_ADDRESS,
 #endif
     .atcai2c.bus            = 0,
-    .atcai2c.baud           = 100000,
-    .wake_delay             = CONFIG_I2C_MANAGER_0_TIMEOUT,
+    .atcai2c.baud           = CONFIG_ATCA_I2C_BAUD_RATE,
+    .wake_delay             = 1500,
     .rx_retries             = 20
 };
 

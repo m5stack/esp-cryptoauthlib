@@ -29,7 +29,7 @@ set( COMPONENT_INCLUDEDIRS  "${CRYPTOAUTHLIB_DIR}/"
 
 set( COMPONENT_PRIV_INCLUDEDIRS "port/include" )
 
-set( COMPONENT_REQUIRES         "mbedtls" "freertos" "driver" "Core2-for-AWS-IoT-EduKit" )
+set( COMPONENT_REQUIRES         "mbedtls" "freertos" "driver" "Core2-for-AWS-IoT-Kit" )
 
 # Don't include the default interface configurations from cryptoauthlib
 set( COMPONENT_EXCLUDE_SRCS "${CRYPTOAUTHLIB_DIR}/atca_cfgs.c" )

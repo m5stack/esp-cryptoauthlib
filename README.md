@@ -2,12 +2,12 @@
 
 # ESP-CRYPTOAUTHLIB
 
-This is a port of Microchip's [cryptoauthlib](https://github.com/MicrochipTech/cryptoauthlib) to work on the [M5Stack Core2 for AWS IoT EduKit](https://aws.amazon.com/iot/edukit/#Get_started_with_AWS_IoT_EduKit). It contains necessary build support to use cryptoauthlib with ESP-IDF as well as `esp_cryptoauthlib_utility` for configuring and provisiong ATECC608 chip integrated with the Core2 for AWS. The cryptoauthlib folder is a submodule of Microchip's [cryptoauthlib](https://github.com/MicrochipTech/cryptoauthlib). This ported library requires the [Core2 for AWS IoT EduKit board support package](https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/tree/BSP-dev) (BSP) to be included for thread-safe access to the I2C bus using Rop Gonggrijp's I2C Manager, and power to the chip using the ported Mika Tuupola's AXP192 driver.
+This is a port of Microchip's [cryptoauthlib](https://github.com/MicrochipTech/cryptoauthlib) to work on the [M5Stack Core2 for AWS IoT Kit](https://shop.m5stack.com/products/m5stack-core2-esp32-iot-development-kit-for-aws-iot-edukit). It contains necessary build support to use cryptoauthlib with ESP-IDF as well as `esp_cryptoauthlib_utility` for configuring and provisiong ATECC608 chip integrated with the Core2 for AWS. The cryptoauthlib folder is a submodule of Microchip's [cryptoauthlib](https://github.com/MicrochipTech/cryptoauthlib). This ported library requires the [Core2 for AWS IoT Kit board support package](https://github.com/m5stack/Core2-for-AWS-IoT-Kit/tree/BSP-dev) (BSP) to be included for thread-safe access to the I2C bus using Rop Gonggrijp's I2C Manager, and power to the chip using the ported Mika Tuupola's AXP192 driver.
 
 ## Requirements
 
-* Core2 for AWS IoT EduKit BSP(https://github.com/m5stack/Core2-for-AWS-IoT-EduKit/tree/BSP-dev)
-* Configuration in [sdkconfig.defaults](https://github.com/aws-iot-edukit/Project_Template-Core2_for_AWS/blob/main/sdkconfig.defaults)
+* Core2 for AWS IoT Kit BSP(https://github.com/m5stack/Core2-for-AWS-IoT-Kit/tree/BSP-dev)
+* Configuration in [sdkconfig.defaults](https://github.com/m5stack/Project_Template-Core2_for_AWS/blob/main/sdkconfig.defaults)
 * Preferred [ESP-IDF](https://github.com/espressif/esp-idf) tag `release/v4.3` or newer OR use PlatformIO with [Espressif32 platform](https://github.com/platformio/platform-espressif32/) v3.3.1+.
 * Environment variable `IDF_PATH` should be set
 
@@ -27,7 +27,7 @@ There are two ways to use **esp-cryptoauthlib** and the Core2 for AWS BSP in you
 * Download **esp-cryptoauthlib** and the **Core2 for AWS BSP** with:
 ```
     git clone https://github.com/espressif/esp-cryptoauthlib.git --recurse-submodules
-    git clone https://github.com/m5stack/Core2-for-AWS-IoT-EduKit.git --recurse-submodules
+    git clone https://github.com/m5stack/Core2-for-AWS-IoT-Kit.git --recurse-submodules
 ```
 3) Enable the correct configurations for ESP-IDF using KConfig menu:
 ```
